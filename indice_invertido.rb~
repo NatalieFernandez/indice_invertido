@@ -39,7 +39,7 @@ class IndiceInvertido
     end
     @tabela << {:termo => termo, :docs_count => {doc => 1}}
   end
-
+  
   def add_count(termo, doc)
     @tabela.each do |linha|
       if linha[:termo] == termo 
