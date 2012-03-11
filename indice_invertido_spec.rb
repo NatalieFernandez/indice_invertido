@@ -1,4 +1,5 @@
 require './indice_invertido'
+#require './termolaria'
 
 describe IndiceInvertido do 
   # it 'add termo, doc e count' do
@@ -18,6 +19,7 @@ describe IndiceInvertido do
   #                              :docs_count=>{'doc_1' => 2, 'doc_3' => 1}}]
 
   # end
+
   # it 'add termos de arquivos' do
   #   termos_arq1 = File.new('arquivo1.txt', 'r').gets.split
   #   termos_arq1.should == ['Quem', 'casa','quer', 'casa']

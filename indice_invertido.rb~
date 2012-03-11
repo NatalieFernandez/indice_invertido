@@ -1,4 +1,7 @@
+#require './termolaria'
+
 class IndiceInvertido
+  include Termolaria
   attr_reader :tabela
 
   def initialize(arquivos)

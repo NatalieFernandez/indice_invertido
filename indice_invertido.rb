@@ -1,4 +1,7 @@
+require './termolaria'
+
 class IndiceInvertido
+  include Termolaria
   attr_reader :tabela
 
   def initialize(arquivos)
@@ -39,7 +42,7 @@ class IndiceInvertido
     end
     @tabela << {:termo => termo, :docs_count => {doc => 1}}
   end
-
+  
   def add_count(termo, doc)
     @tabela.each do |linha|
       if linha[:termo] == termo 
