@@ -30,7 +30,8 @@ class IndiceInvertido
   def extrair_termos(arquivo)
     termos = File.open(arquivo, 'r').gets.split
     termos.each { |termo|
-      add_termo(termo.minusculo, arquivo) if termo.comeca_por_numero? }
+      if termo.e valido?
+      add_termo(termo.minusculo, arquivo) if !termo.comeca_por_numero? }
   end
 
   def add_termo(termo, doc)
