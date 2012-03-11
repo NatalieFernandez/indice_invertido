@@ -1,0 +1,11 @@
+class String
+  def minusculo
+    return false if (self.class != String)
+    self.downcase
+  end
+
+  def e_numero?
+    return true if (self.is_a? Numeric) || (self[0] =~ /[0-9]/)
+    false
+  end
+end
