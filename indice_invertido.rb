@@ -1,7 +1,6 @@
-require './termolaria'
+require './valida_termo'
 
 class IndiceInvertido
-  include Termolaria
   attr_reader :tabela
 
   def initialize(arquivos)
@@ -30,7 +29,8 @@ class IndiceInvertido
 
   def extrair_termos(arquivo)
     termos = File.open(arquivo, 'r').gets.split
-    termos.each { |termo| add_termo(termo, arquivo) }
+    termos.each { |termo|
+      add_termo(termo.minusculo, arquivo) if !termo.comeca_por_numero? }
   end
 
   def add_termo(termo, doc)

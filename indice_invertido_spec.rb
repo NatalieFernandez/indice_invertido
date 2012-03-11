@@ -1,5 +1,4 @@
 require './indice_invertido'
-#require './termolaria'
 
 describe IndiceInvertido do 
   # it 'add termo, doc e count' do
@@ -19,7 +18,6 @@ describe IndiceInvertido do
   #                              :docs_count=>{'doc_1' => 2, 'doc_3' => 1}}]
 
   # end
-
   # it 'add termos de arquivos' do
   #   termos_arq1 = File.new('arquivo1.txt', 'r').gets.split
   #   termos_arq1.should == ['Quem', 'casa','quer', 'casa']
@@ -98,6 +96,6 @@ describe IndiceInvertido do
   # end
   it '' do
     indices = IndiceInvertido.new('arquivos.txt')
-    indices.mostrar_indice_invertido.should == 'Quem 1 arquivo1.txt 2 arquivo2.txt -- casa 2 arquivo1.txt 1 arquivo2.txt -- quer 1 arquivo1.txt -- Ninguem 1 arquivo2.txt -- em 1 arquivo2.txt -- Todos 2 arquivo2.txt -- sairam 1 arquivo2.txt -- Quer 1 arquivo2.txt -- entrar 1 arquivo2.txt -- Flavia 1 arquivo3.txt -- Natalie 1 arquivo3.txt -- Ohana 1 arquivo3.txt -- Pablo 1 arquivo3.txt -- Ricardo 1 arquivo3.txt -- Thiago 1 arquivo3.txt -- '
+    indices.mostrar_indice_invertido.should == 'quem 1 arquivo1.txt 2 arquivo2.txt -- casa 2 arquivo1.txt 1 arquivo2.txt -- quer 1 arquivo1.txt 1 arquivo2.txt -- ninguem 1 arquivo2.txt -- em 1 arquivo2.txt -- todos 2 arquivo2.txt -- sairam 1 arquivo2.txt -- entrar 1 arquivo2.txt -- flavia 1 arquivo3.txt -- natalie 1 arquivo3.txt -- ohana 1 arquivo3.txt -- pablo 1 arquivo3.txt -- ricardo 1 arquivo3.txt -- thiago 1 arquivo3.txt -- '
   end
 end
