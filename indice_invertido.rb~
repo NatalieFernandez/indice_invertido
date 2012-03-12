@@ -34,7 +34,7 @@ class IndiceInvertido
     termos = File.open(arquivo, 'r').gets.split
     termos.each { |termo|
       if !termo.comeca_por_numero?
-        add_termo(arquivo, termo.validar_termo(@limite_termo))
+        add_termo(arquivo, termo.validar_termo (@limite_termo))
       end }
   end
 
