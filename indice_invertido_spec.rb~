@@ -95,10 +95,7 @@ describe IndiceInvertido do
     #                                             Thiago 1 arquivo3.txt -- '
   # end
   it '' do
-    indices = IndiceInvertido.new('arquivos.txt')
-    indices.mostrar_indice_invertido.should ==
-'quem 1 arquivo1.txt 2 arquivo2.txt -- casa 2 arquivo1.txt 1 arquivo2.txt -- quer 1 arquivo1.txt 1 arquivo2.txt -- ninguem 1 arquivo2.txt -- em 1 arquivo2.txt -- todos 2 arquivo2.txt -- sairam 1 arquivo2.txt -- entrar 1 arquivo2.txt -- flavia 1 arquivo3.txt -- natalie 1 arquivo3.txt -- ohana 1 arquivo3.txt -- pablo 1 arquivo3.txt -- ricardo 1 arquivo3.txt -- thiago 1 arquivo3.txt -- '
-
-#"quem 1 arquivo1.txt 2 arquivo2.txt -- casa 2 arquivo1.txt 1 arquivo2.txt -- quer 1 #arquivo1.txt 1 arquivo2.txt -- ninguem 1 arquivo2.txt -- em 1 arquivo2.txt -- todos #2 arquivo2.txt -- sairam 1 arquivo2.txt -- entrar 1 arquivo2.txt -- flavia 1 #arquivo3.txt -- natalie 1 arquivo3.txt -- ohana 1 arquivo3.txt -- pablo 1 #arquivo3.txt -- ricardo 1 arquivo3.txt -- thiago 1 arquivo3.txt -- "
+    indices = IndiceInvertido.new('arquivos.txt', 1, 10)
+    indices.mostrar_indice_invertido.should == "quem       1 arquivo1.txt 2 arquivo2.txt -- casa       2 arquivo1.txt 1 arquivo2.txt -- quer       1 arquivo1.txt 1 arquivo2.txt -- ninguem    1 arquivo2.txt -- em         1 arquivo2.txt -- todos      2 arquivo2.txt -- sairam     1 arquivo2.txt -- entrar     1 arquivo2.txt -- flavia     1 arquivo3.txt -- natalie    1 arquivo3.txt -- ohana      1 arquivo3.txt -- pablo      1 arquivo3.txt -- ricardo    1 arquivo3.txt -- thiago     1 arquivo3.txt -- "
   end
 end

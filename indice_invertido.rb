@@ -3,8 +3,10 @@ require './valida_termo'
 class IndiceInvertido
   attr_reader :tabela
 
-  def initialize(arquivos)
+  def initialize(arquivos, limite_termo) # implementar limite minimo para :limite_termo
+    @limite_termo = limite_termo
     @tabela = []
+
     extrair_arquivos(arquivos)
   end
 
@@ -21,6 +23,7 @@ class IndiceInvertido
   end
 
   private 
+  attr_accessor :limite_termo
 
   def extrair_arquivos(arquivo)
     arquivos = File.open(arquivo, 'r').gets.split
@@ -30,10 +33,12 @@ class IndiceInvertido
   def extrair_termos(arquivo)
     termos = File.open(arquivo, 'r').gets.split
     termos.each { |termo|
-      add_termo(termo.minusculo.ignorar_pontuacao, arquivo) if !termo.comeca_por_numero? }
+      if !termo.comeca_por_numero?
+        add_termo(arquivo, termo.validar_termo(@limite_termo))
+      end }
   end
 
-  def add_termo(termo, doc)
+  def add_termo(doc, termo)
     @tabela.each do |linha|
       if linha[:termo] == termo
         add_count(termo, doc)
